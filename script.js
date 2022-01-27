@@ -10,9 +10,9 @@ const generateTarget = () => {
 /* This function compares the number choose from the human and computer
    as well as which guess was closer to the secret target number
 */
-const compareGuesses = (userGuess, computerGuess, secret) => {
-    let user1 = Math.abs(userGuess - secret)
-    let comp1 = Math.abs(comp1 - secret)
+const compareGuesses = (humanGuess, computerGuess, secret) => {
+    let user1 = Math.abs(humanGuess - secret)
+    let comp1 = Math.abs(computerGuess - secret)
     if (userGuess >= 9 || userGuess < 0) {
         return 'Please pick a number between 0 and 9!'
     }
@@ -28,8 +28,8 @@ const compareGuesses = (userGuess, computerGuess, secret) => {
 const updateScore = winner => {
     if (winner === 'human') {
         humanScore += 1;
-    } else {
-        computerScore +1;
+    } else if (winner === 'computer') {
+        computerScore += 1;
 }
 
 // Advances the round Number    
